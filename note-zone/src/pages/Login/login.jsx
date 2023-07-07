@@ -4,6 +4,7 @@ import "./login.css";
 import { useNavigate } from "react-router";
 
 const Login = () => {
+  document.title = "Note Zone | Login";
   const [isPasswordHide, setIsPasswordHide] = useState(true);
   const navigate = useNavigate();
 

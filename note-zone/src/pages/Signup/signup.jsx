@@ -3,6 +3,7 @@ import "./signup.css";
 import { useNavigate } from "react-router";
 
 const Signup = () => {
+  document.title = "Note Zone | Signup";
   const navigate = useNavigate();
 
   const [isPasswordHide, setIsPasswordHide] = useState(true);
