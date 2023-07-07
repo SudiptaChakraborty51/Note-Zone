@@ -1,9 +1,13 @@
+import { Route, Routes } from "react-router";
 import "./App.css";
+import Login from "./pages/Login/login";
 
 function App() {
   return (
     <>
-      <h1>Note Zone</h1>
+      <Routes>
+        <Route path="/login" element={<Login />}/>
+      </Routes>
     </>
   );
 }

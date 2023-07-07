@@ -1,0 +1,143 @@
+.login-container {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.login {
+  padding: 5px 30px;
+  width: 70%;
+  max-width: 25rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+}
+
+.login h2 {
+  text-align: center;
+}
+
+.login-logo {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.login-logo img {
+  height: 60px;
+}
+
+.login-logo h2 {
+  color: var(--primary-dark);
+}
+
+.login p {
+  text-align: center;
+  margin: 0;
+}
+
+.login-form-div {
+  margin: 10px 0;
+}
+
+.login input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  box-sizing: border-box;
+  outline: none;
+  border: 1px solid var(--grey-color);
+  margin: 5px 0;
+}
+
+.login label span {
+  color: var(--red-color);
+}
+
+.login input:focus {
+  border: 1px solid var(--primary-color);
+}
+
+.login-button {
+  width: 100%;
+  background-color: var(--primary-color);
+  border: none;
+  color: var(--black-color);
+  padding: 8px;
+  margin: 10px 0;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+}
+
+.google-login-button {
+  width: 100%;
+  background-color: var(--primary-color);
+  border: none;
+  color: var(--black-color);
+  padding: 4px;
+  margin: 10px 0;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.google-login-button div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  border: 2px solid var(--black-color);
+}
+
+.login-button:hover,
+.google-login-button:hover {
+  background-color: var(--primary-dark);
+}
+
+.password-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.password-wrapper span {
+  position: absolute;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  padding-right: 0.5rem;
+  cursor: pointer;
+}
+
+.create-new-account-link {
+  padding: 10px 0 20px 0;
+}
+
+.create-new-account-link:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .login {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .login {
+    width: 35%;
+  }
+}
