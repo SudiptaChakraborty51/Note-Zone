@@ -63,7 +63,7 @@ const Login = () => {
             <div>
               <i class="fa-brands fa-google"></i>
             </div>{" "}
-            Signin with Google
+            Sign in with Google
           </button>
         </form>
 
