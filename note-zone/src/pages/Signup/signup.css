@@ -1,0 +1,100 @@
+.signup-container {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.signup {
+  padding: 10px 40px;
+  width: 70%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 25rem;
+}
+
+.signup form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.signup form label span {
+  color: var(--red-color);
+}
+
+.signup h2 {
+  text-align: center;
+}
+
+.signup .name {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
+.signup .name input {
+  width: 100%;
+}
+
+.signup input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  box-sizing: border-box;
+  outline: none;
+  border: 1px solid var(--grey-color);
+}
+
+.signup input:focus {
+  border: 1px solid var(--primary-color);
+}
+
+.signup label {
+  font-size: 14px;
+}
+
+.signup .signup-button {
+  width: 100%;
+  background-color: var(--primary-color);
+  border: none;
+  color: var(--black-color);
+  padding: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+}
+
+.signup .signup-button:hover {
+  background-color: var(--primary-dark);
+}
+
+.signup p {
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  margin: 0;
+  padding: 10px 0 20px 0;
+}
+
+.signup p:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .signup {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .signup {
+    width: 35%;
+  }
+}

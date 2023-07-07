@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import logo from "/notes.png";
 import "./login.css";
+import { useNavigate } from "react-router";
 
 const Login = () => {
   const [isPasswordHide, setIsPasswordHide] = useState(true);
+  const navigate = useNavigate();
 
   return (
     <div className="login-container">
@@ -64,7 +66,10 @@ const Login = () => {
           </button>
         </form>
 
-        <p className="create-new-account-link">
+        <p
+          className="create-new-account-link"
+          onClick={() => navigate("/signup")}
+        >
           Create New account <i className="fa-solid fa-angle-right"></i>
         </p>
       </div>
