@@ -18,7 +18,7 @@ const Login = () => {
         <h2>Login</h2>
         <form>
           <div className="login-form-div">
-            <label for="email">
+            <label htmlFor="email">
               Email <span>*</span>
             </label>
             <input
@@ -30,13 +30,11 @@ const Login = () => {
           </div>
 
           <div className="login-form-div">
-            <label for="password">
+            <label htmlFor="password">
               Password <span>*</span>
             </label>
             <div className="password-wrapper">
               <input
-                minlength="4"
-                maxlength="10"
                 id="password"
                 type={isPasswordHide ? "password" : "text"}
                 placeholder={isPasswordHide ? "********" : "Enter password"}
@@ -61,7 +59,7 @@ const Login = () => {
           </button>
           <button type="submit" className="google-login-button">
             <div>
-              <i class="fa-brands fa-google"></i>
+              <i className="fa-brands fa-google"></i>
             </div>{" "}
             Sign in with Google
           </button>

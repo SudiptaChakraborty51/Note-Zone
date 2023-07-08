@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./landing.css";
 import { Link } from "react-router-dom";
 import landing from "../../assets/landing.svg";
+import { AuthContext } from "../../contexts/AuthContext";
 
 const Landing = () => {
   document.title = "Note Zone";
+  const { user } = useContext(AuthContext);
+
   return (
     <div className="landing-container">
       <div className="hero__container">
@@ -18,7 +21,7 @@ const Landing = () => {
             Remember everything important. A central place for your notes,
             ideas, lists and reminders.
           </p>
-          <Link to="/login" className="btn link">
+          <Link to={user ? "/notes" : "/login"} className="btn link">
             Try Now
           </Link>
         </div>

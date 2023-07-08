@@ -25,6 +25,26 @@
   color: var(--red-color);
 }
 
+.signup .add-avatar-div label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.signup .add-avatar-div label i {
+  font-size: 28px;
+  color: var(--primary-dark);
+}
+
+.signup .add-avatar-div input {
+  display: none;
+}
+
+.signup .add-avatar-div label span{
+  color: var(--black-color);
+}
+
 .signup h2 {
   text-align: center;
 }
