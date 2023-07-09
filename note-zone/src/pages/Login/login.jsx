@@ -1,12 +1,41 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import logo from "/notes.png";
 import "./login.css";
 import { useNavigate } from "react-router";
+import { AuthContext } from "../../contexts/AuthContext";
+import { toast } from "react-toastify";
 
 const Login = () => {
   document.title = "Note Zone | Login";
   const [isPasswordHide, setIsPasswordHide] = useState(true);
   const navigate = useNavigate();
+
+  const { logIn, googleSignIn } = useContext(AuthContext);
+
+  const [userData, setUserData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleSubmitLogIn = async (e) => {
+    e.preventDefault();
+    try {
+      await logIn(userData.email, userData.password);
+      navigate("/notes");
+    } catch (err) {
+      toast.error(err.message);
+    }
+  };
+
+  const handleGoogleSignIn = async (e) => {
+    e.preventDefault();
+    try {
+      await googleSignIn();
+      navigate("/notes");
+    } catch (err) {
+      toast.error(err.message);
+    }
+  };
 
   return (
     <div className="login-container">
@@ -16,7 +45,7 @@ const Login = () => {
           <h2>Note Zone</h2>
         </div>
         <h2>Login</h2>
-        <form>
+        <form onSubmit={handleSubmitLogIn}>
           <div className="login-form-div">
             <label htmlFor="email">
               Email <span>*</span>
@@ -26,6 +55,10 @@ const Login = () => {
               placeholder="test@gmail.com"
               required
               type="email"
+              value={userData.email}
+              onChange={(e) =>
+                setUserData((prev) => ({ ...prev, email: e.target.value }))
+              }
             />
           </div>
 
@@ -39,6 +72,10 @@ const Login = () => {
                 type={isPasswordHide ? "password" : "text"}
                 placeholder={isPasswordHide ? "********" : "Enter password"}
                 required
+                value={userData.password}
+                onChange={(e) =>
+                  setUserData((prev) => ({ ...prev, password: e.target.value }))
+                }
               />
               <span
                 onClick={() =>
@@ -57,14 +94,13 @@ const Login = () => {
           <button type="submit" className="login-button">
             Login
           </button>
-          <button type="submit" className="google-login-button">
-            <div>
-              <i className="fa-brands fa-google"></i>
-            </div>{" "}
-            Sign in with Google
-          </button>
         </form>
-
+        <button className="google-login-button" onClick={handleGoogleSignIn}>
+          <div>
+            <i className="fa-brands fa-google"></i>
+          </div>{" "}
+          Sign in with Google
+        </button>
         <p
           className="create-new-account-link"
           onClick={() => navigate("/signup")}
