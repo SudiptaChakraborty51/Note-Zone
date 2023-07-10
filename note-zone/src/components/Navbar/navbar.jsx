@@ -15,6 +15,15 @@ const Navbar = () => {
           <img src={logo} alt="logo" />
           <h2>Note Zone</h2>
         </div>
+        <div className="middle-nav">
+          <div className="search-bar">
+            <input
+              type="text"
+              placeholder="Search notes"
+            />
+              <i className="fa-solid fa-magnifying-glass"></i>
+          </div>
+        </div>
         <div className="right-nav">
           {/* <i class="fa-solid fa-table-cells-large"></i> */}
           <i class="fa-solid fa-list"></i>

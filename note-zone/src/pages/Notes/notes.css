@@ -1,0 +1,17 @@
+.notes {
+  min-height: 100vh;
+}
+
+.notes-content {
+  display: flex;
+}
+
+.notes-main {
+  width: calc(100% - 16%);
+  padding: 10px 0;
+  position: relative;
+  left: 15%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
