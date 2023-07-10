@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import Navbar from "../../components/Navbar/navbar";
 
 const Notes = () => {
   return (
     <div>
-      Notes
+      <Navbar />
     </div>
-  )
-}
+  );
+};
 
-export default Notes
+export default Notes;

@@ -1,0 +1,94 @@
+.navbar {
+  padding: 0 2rem;
+  box-shadow: 0 8px 6px -6px var(--grey-color);
+  position: sticky;
+  height: 60px;
+  top: 0;
+  z-index: 10;
+  box-sizing: border-box;
+  background-color: var(--white-color);
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 5px;
+}
+
+.navbar .left-nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.navbar .left-nav h2 {
+  color: var(--primary-dark);
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .left-nav img {
+  height: 50px;
+}
+
+.navbar .right-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar .right-nav img {
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.navbar .right-nav i {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.right-nav .profile-image-container {
+  position: relative;
+}
+
+.right-nav .profile-image-container .profile-logout-modal {
+  position: absolute;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: var(--white-color);
+  padding: 0.5rem;
+  border: 1px solid var(--grey-color);
+  right: 0;
+}
+
+.right-nav .profile-image-container .profile-logout-modal div {
+  padding: 5px;
+}
+
+.right-nav .profile-image-container .profile-logout-modal div:hover {
+  background-color: var(--lightgrey-color);
+  cursor: pointer;
+  color: var(--primary-dark);
+  border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+  .left-nav h2 {
+    display: none;
+  }
+
+  .navbar {
+    padding: 0 0.5rem;
+  }
+
+  .navbar .right-nav {
+    gap: 1rem;
+  }
+}

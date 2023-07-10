@@ -14,6 +14,7 @@ const Signup = () => {
 
   const [isPasswordHide, setIsPasswordHide] = useState(true);
   const [isConfirmPasswordHide, setIsConfirmPasswordHide] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const [userDetails, setUserDetails] = useState({
     firstName: "",
@@ -218,7 +219,7 @@ const Signup = () => {
           <div className="add-avatar-div">
             <label htmlFor="file" onClick={imageSelectHandler}>
               <i className="fa-solid fa-image-portrait"></i>
-              <span>Add an avatar</span>
+              <span>{userDetails?.file ? userDetails.file.name : "Add an avatar"}</span>
             </label>
           </div>
 
