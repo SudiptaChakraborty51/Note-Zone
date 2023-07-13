@@ -15,3 +15,27 @@
   align-items: center;
   flex-direction: column;
 }
+
+
+.notes-main .new-note-button {
+  bottom: 3.5rem;
+  right: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--primary-dark);
+  border: none;
+  height: 3rem;
+  width: 3rem;
+  cursor: pointer;
+  position: fixed;
+}
+
+.notes-main .new-note-button:hover {
+  opacity: 0.8;
+}
+
+.notes-main .new-note-button i {
+  font-size: 18px;
+}
