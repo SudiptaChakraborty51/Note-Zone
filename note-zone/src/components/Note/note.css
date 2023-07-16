@@ -4,6 +4,7 @@
     letter-spacing: 0.025em;
     font-weight: 400;
     font-family: "Poppins", "sans - serif";
+    width: 100%;
 }
 
 .note-card-container .note-card {
@@ -16,6 +17,7 @@
     justify-content: space-between;
     cursor: pointer;
     width: 100%;
+    min-height: 100px;
 }
 
 .note-card h3 {

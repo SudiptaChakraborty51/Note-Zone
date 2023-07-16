@@ -1,28 +1,75 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
+import "./toolBarComponents.css";
+import { useOutsideClick } from "../../../hooks/useOutsideClick";
 
-const ColorPalette = ({changeBg}) => {
+const ColorPalette = ({ changeBg }) => {
   const [showColors, setShowColors] = useState(false);
+  const colorPaletteModalNode = useOutsideClick(() => setShowColors(false));
 
   return (
     <div>
-      <i className="fa-solid fa-palette" title="choose background color" onClick={() => setShowColors(true)}></i>
-      {
-        showColors && <>
-        <div onClick={() => setShowColors(false)}>
-          <div>
-            <span className='colors bg-white'></span>
-            <span className='colors bg-orange'></span>
-            <span className='colors bg-green'></span>
-            <span className='colors bg-red'></span>
-            <span className='colors bg-indigo'></span>
-            <span className='colors bg-yellow'></span>
-            <span className='colors bg-purple'></span>
+      <i
+        className="fa-solid fa-palette"
+        title="choose background color"
+        onClick={() => setShowColors((prev) => !prev)}
+      ></i>
+      {showColors && (
+        <>
+          <div className="colors-palatte-container" ref={colorPaletteModalNode}>
+            <span
+              className="colors bg-white"
+              onClick={() => {
+                changeBg("bg-white");
+                setShowColors(false);
+              }}
+            ></span>
+            <span
+              className="colors bg-orange"
+              onClick={() => {
+                changeBg("bg-orange");
+                setShowColors(false);
+              }}
+            ></span>
+            <span
+              className="colors bg-green"
+              onClick={() => {
+                changeBg("bg-green");
+                setShowColors(false);
+              }}
+            ></span>
+            <span
+              className="colors bg-red"
+              onClick={() => {
+                changeBg("bg-red");
+                setShowColors(false);
+              }}
+            ></span>
+            <span
+              className="colors bg-indigo"
+              onClick={() => {
+                changeBg("bg-indigo");
+                setShowColors(false);
+              }}
+            ></span>
+            <span
+              className="colors bg-yellow"
+              onClick={() => {
+                changeBg("bg-yellow");
+                setShowColors(false);
+              }}
+            ></span>
+            <span
+              className="colors bg-purple"
+              onClick={() => {
+                changeBg("bg-purple");
+                setShowColors(false);
+              }}
+            ></span>
           </div>
-        </div>
         </>
-      }
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default ColorPalette
+export default ColorPalette;

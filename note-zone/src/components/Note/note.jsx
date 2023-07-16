@@ -4,7 +4,7 @@ import "./note.css";
 const Note = ({ note }) => {
   return (
     <div className="note-card-container">
-      <div className="note-card">
+      <div className={`note-card ${note?.bg}`}>
         <div className="note-content">
         <h3>{note?.title}</h3>
         <p>{note?.content}</p>

@@ -9,17 +9,23 @@ const useNotesData = () => {
 
   console.log("hi",user.uid);
 
-  const q = query(
-    notesRef,
-    where("author", "==", user.uid),
-    orderBy("createdAt", "desc")
-  );
+  // let q=null;
+
+  // if(user.uid) {
+    const q = query(
+      notesRef,
+      where("author", "==", user.uid),
+      orderBy("createdAt", "desc")
+    );
+  // }
 
   useEffect(() => {
-    const unsubscribe = onSnapshot(q, (snapshot) => {
-      setNotes(snapshot.docs.map((doc) => ({ ...doc?.data(), id: doc.id })));
-    });
-
+    // let unsubscribe = () => {};
+    // if(q) {
+      const unsubscribe = onSnapshot(q, (snapshot) => {
+        setNotes(snapshot.docs.map((doc) => ({ ...doc?.data(), id: doc.id })));
+      });
+  // }
     return unsubscribe;
   }, []);
 

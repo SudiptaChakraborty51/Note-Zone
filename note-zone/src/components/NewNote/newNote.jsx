@@ -100,7 +100,7 @@ const NewNote = ({ setIsOpen }) => {
 
   return (
     <div className="new-note-modal-container">
-      <div className="new-note-modal" ref={newNoteModalNode}>
+      <div className={`new-note-modal ${newNote.bg}`} ref={newNoteModalNode}>
         <div className="new-note-container">
           <input
             type="text"

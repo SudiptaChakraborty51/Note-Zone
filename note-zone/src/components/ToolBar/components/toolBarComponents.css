@@ -1,0 +1,45 @@
+.colors-palatte-container {
+    padding: 0.5rem;
+    background-color: var(--grey-color);
+    border-radius: 0.75rem;
+    display: flex;
+    gap: 0.5rem;
+    bottom: 2.5rem;
+    position: absolute;
+    border: 1px solid var(--light-grey-color);
+}
+
+.colors-palatte-container .colors {
+    border-radius: 50%;
+    cursor: pointer;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.bg-white {
+    background-color: var(--white-color);
+}
+
+.bg-orange {
+    background-color: var(--orange-color);
+}
+
+.bg-green {
+    background-color: var(--green-color);
+}
+
+.bg-indigo {
+    background-color: var(--indigo-color);
+}
+
+.bg-red {
+    background-color: var(--light-red-color);
+}
+
+.bg-purple {
+    background-color: var(--purple-color);
+}
+
+.bg-yellow {
+    background-color: var(--yellow-color);
+}

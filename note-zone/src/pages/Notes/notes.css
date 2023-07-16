@@ -9,10 +9,17 @@
 .notes-main {
   width: calc(100% - 16%);
   padding: 10px 0;
+  left: 16%;
   position: relative;
   display: flex;
   align-items: center;
+}
+
+.notes-main section {
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  margin: 0 1rem; 
 }
 
 .notes-main .new-note-button {

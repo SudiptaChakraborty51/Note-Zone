@@ -1,5 +1,6 @@
 .layout {
     display: flex;
-    gap: 4rem;
+    gap: 2rem;
     width: 100%;
+    flex-wrap: wrap;
 }
