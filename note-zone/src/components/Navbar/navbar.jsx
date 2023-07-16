@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import logo from "/notes.png";
 import "./navbar.css";
 import { AuthContext } from "../../contexts/AuthContext";
+import {toast} from "react-toastify";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -26,7 +27,7 @@ const Navbar = () => {
         </div>
         <div className="right-nav">
           {/* <i class="fa-solid fa-table-cells-large"></i> */}
-          <i class="fa-solid fa-list"></i>
+          <i className="fa-solid fa-list"></i>
           <i className="fa-solid fa-moon"></i>
           <div className="profile-image-container">
             <img
@@ -43,7 +44,9 @@ const Navbar = () => {
             {showProfile && (
               <div className="profile-logout-modal">
                 <div>Profile</div>
-                <div onClick={() => logOut()}>Logout</div>
+                <div onClick={() => {
+                  logOut();
+                  toast.success("Logged out!")}}>Logout</div>
               </div>
             )}
           </div>

@@ -21,6 +21,7 @@ const Login = () => {
     e.preventDefault();
     try {
       await logIn(userData.email, userData.password);
+      toast.success("Login Successful!");
       navigate("/notes");
     } catch (err) {
       toast.error(err.message);
@@ -31,6 +32,7 @@ const Login = () => {
     e.preventDefault();
     try {
       await googleSignIn();
+      toast.success("Sign in Successful!");
       navigate("/notes");
     } catch (err) {
       toast.error(err.message);

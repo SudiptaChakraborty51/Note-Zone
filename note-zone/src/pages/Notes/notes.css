@@ -10,16 +10,14 @@
   width: calc(100% - 16%);
   padding: 10px 0;
   position: relative;
-  left: 15%;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-
 .notes-main .new-note-button {
-  bottom: 3.5rem;
-  right: 3.5rem;
+  bottom: 8%;
+  right: 5%;
   display: flex;
   align-items: center;
   justify-content: center;

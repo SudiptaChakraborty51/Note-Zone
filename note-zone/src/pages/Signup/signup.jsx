@@ -80,6 +80,7 @@ const Signup = () => {
             }
           });
         });
+        toast.success("Sign in Successful!")
         navigate("/notes");
       } catch (err) {
         toast.error(err.message);
