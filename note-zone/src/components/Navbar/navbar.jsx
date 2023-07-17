@@ -5,7 +5,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 import { toast } from "react-toastify";
 
 const Navbar = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut, query, setQuery } = useContext(AuthContext);
 
   const [showProfile, setShowProfile] = useState(false);
 
@@ -22,15 +22,25 @@ const Navbar = () => {
         </div>
         <div className="middle-nav">
           <div className="search-bar">
-            <input type="text" placeholder="Search notes" />
-            <i className="fa-solid fa-magnifying-glass"></i>
+            <input
+              type="text"
+              placeholder="Search notes"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+            />
+            {query.trim() === "" ? (
+              <i className="fa-solid fa-magnifying-glass"></i>
+            ) : (
+              <i className="fa-solid fa-xmark" onClick={() => setQuery("")}></i>
+            )}
           </div>
         </div>
         <div className="right-nav">
           <div className="profile-image-container">
             <img
               src={
-                user?.photoURL || userData?.photoURL ||
+                user?.photoURL ||
+                userData?.photoURL ||
                 `https://res.cloudinary.com/dqlasoiaw/image/upload/v1686688962/tech-social/blank-profile-picture-973460_1280_d1qnjd.png`
               }
               alt={user?.displayName}

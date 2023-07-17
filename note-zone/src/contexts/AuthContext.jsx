@@ -15,6 +15,7 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState({});
 
   const [pathName, setPathName] = useState("");
+  const [query, setQuery] = useState("");
 
   const logIn = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
@@ -52,6 +53,8 @@ const AuthProvider = ({ children }) => {
         googleSignIn,
         pathName,
         setPathName,
+        query,
+        setQuery,
       }}
     >
       {children}

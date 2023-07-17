@@ -107,6 +107,7 @@
 .navbar .middle-nav .search-bar i {
   position: absolute;
   padding-right: 10px;
+  cursor: pointer;
 }
 
 .navbar .middle-nav .search-bar input::placeholder {

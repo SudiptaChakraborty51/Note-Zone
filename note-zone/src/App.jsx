@@ -14,7 +14,7 @@ import { useContext } from "react";
 import { AuthContext } from "./contexts/AuthContext";
 
 function App() {
-  const { pathName } = useContext(AuthContext);
+  const { pathName, query } = useContext(AuthContext);
   return (
     <>
       <Routes>
@@ -22,7 +22,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route element={<RequireAuth />}>
-          <Route path="/notes" element={<Notes />} />
+          <Route path="/notes" element={<Notes query={query}/>} />
           <Route path="/archive" element={<Archive />} />
           <Route path="/bin" element={<Bin />} />
           <Route
