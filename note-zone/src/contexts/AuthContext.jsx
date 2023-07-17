@@ -13,6 +13,7 @@ export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState({});
+  const [loading, setLoading] = useState(true);
 
   const [pathName, setPathName] = useState("");
   const [query, setQuery] = useState("");
@@ -36,6 +37,7 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
       console.log("Auth", currentuser);
       setUser(currentuser);
+      setLoading(false);
     });
 
     return () => {
@@ -55,6 +57,7 @@ const AuthProvider = ({ children }) => {
         setPathName,
         query,
         setQuery,
+        loading
       }}
     >
       {children}

@@ -12,25 +12,33 @@ import Bin from "./pages/Bin/bin";
 import Labels from "./pages/Labels/labels";
 import { useContext } from "react";
 import { AuthContext } from "./contexts/AuthContext";
+import ClipLoader from "react-spinners/ClipLoader";
 
 function App() {
-  const { pathName, query } = useContext(AuthContext);
+  const { pathName, query, loading } = useContext(AuthContext);
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route element={<RequireAuth />}>
-          <Route path="/notes" element={<Notes query={query}/>} />
-          <Route path="/archive" element={<Archive />} />
-          <Route path="/bin" element={<Bin />} />
-          <Route
-            path={`/${pathName}`}
-            element={<Labels pathName={pathName} />}
-          />
-        </Route>
-      </Routes>
+    <div className="App">
+      {loading ? (
+        <div className="spinner">
+          <ClipLoader size={50} />
+        </div>
+      ) : (
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route element={<RequireAuth />}>
+            <Route path="/notes" element={<Notes query={query} />} />
+            <Route path="/archive" element={<Archive />} />
+            <Route path="/bin" element={<Bin />} />
+            <Route
+              path={`/${pathName}`}
+              element={<Labels pathName={pathName} />}
+            />
+          </Route>
+        </Routes>
+      )}
+
       <ToastContainer
         position="bottom-right"
         autoClose={1000}
@@ -43,7 +51,7 @@ function App() {
         pauseOnHover
         theme="light"
       />
-    </>
+    </div>
   );
 }
 

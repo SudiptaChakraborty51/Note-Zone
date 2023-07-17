@@ -8,7 +8,7 @@ import Note from "../../components/Note/note";
 import Layout from "../../components/Layout/layout";
 import useSearch from "../../hooks/useSearch";
 
-const Notes = ({query}) => {
+const Notes = ({ query }) => {
   const [isOpen, setIsOpen] = useState(false);
   const { pinned, unpinned } = useNotesData();
 
@@ -24,13 +24,17 @@ const Notes = ({query}) => {
 
   return (
     <div className="notes">
-      <Navbar query={query}/>
+      <Navbar query={query} />
       <div className="notes-content">
         <Sidebar />
         <div className="notes-main">
           <section>
             {query !== "" ? (
-              <Layout>{searchedNotes}</Layout>
+              searchedNotes.length !== 0 ? (
+                <Layout>{searchedNotes}</Layout>
+              ) : (
+                <p>No notes found!</p>
+              )
             ) : (
               <>
                 <div>

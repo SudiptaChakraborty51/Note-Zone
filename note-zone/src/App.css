@@ -17,3 +17,11 @@
   --yellow-color: #fef08a;
   --purple-color: #e9d5ff;
 }
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(0.125rem);
+  transform: translateY(0.125rem);
+}
