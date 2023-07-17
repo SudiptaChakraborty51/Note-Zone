@@ -4,8 +4,9 @@ import { useOutsideClick } from "../../hooks/useOutsideClick";
 import ToolBar from "../ToolBar/toolBar";
 import { AuthContext } from "../../contexts/AuthContext";
 import { notesRef } from "../../firebase";
-import { addDoc, Timestamp } from "firebase/firestore";
+import { addDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
+import { getCurrentDateTime } from "../../utils/getCurrentDateTime";
 
 const NewNote = ({ setIsOpen }) => {
   const newNoteModalNode = useOutsideClick(() => setIsOpen(false));
@@ -32,7 +33,7 @@ const NewNote = ({ setIsOpen }) => {
 
   const addNewNote = async (newNote) => {
     try {
-      await addDoc(notesRef, { ...newNote, createdAt: Timestamp.now() });
+      await addDoc(notesRef, { ...newNote, createdAt: getCurrentDateTime() });
     } catch (err) {
       console.error(err);
     }
@@ -82,7 +83,7 @@ const NewNote = ({ setIsOpen }) => {
     setNewNote((prev) => ({ ...prev, pinned: !prev.pinned }));
   };
 
-  const deleteLebel = (labelName) => {
+  const deleteLabel = (labelName) => {
     setNewNote((prev) => ({
       ...prev,
       label: prev.label.filter((label) => label !== labelName),
@@ -90,17 +91,17 @@ const NewNote = ({ setIsOpen }) => {
   };
 
   const addNewLabel = (labelName) => {
-    if (labelName.trim() !== "" && !newNote.label.includes(labelName.trim())) {
+    if (labelName.trim() !== "" && !newNote.label.includes(labelName.trim().toLowerCase())) {
       setNewNote((prev) => ({
         ...prev,
-        label: [...prev.label, labelName.trim()],
+        label: [...prev.label, labelName.trim().toLowerCase()],
       }));
     }
   };
 
   return (
     <div className="new-note-modal-container">
-      <div className={`new-note-modal ${newNote.bg}`} ref={newNoteModalNode}>
+      <div className={`new-note-modal ${newNote?.bg}`} ref={newNoteModalNode}>
         <div className="new-note-container">
           <input
             type="text"
@@ -126,7 +127,7 @@ const NewNote = ({ setIsOpen }) => {
             binNote={binNote}
             archiveNote={archiveNote}
             pinNote={pinNote}
-            deleteLebel={deleteLebel}
+            deleteLabel={deleteLabel}
             addNewLabel={addNewLabel}
           />
         </div>

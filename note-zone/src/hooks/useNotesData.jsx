@@ -14,7 +14,7 @@ const useNotesData = () => {
   // if(user.uid) {
     const q = query(
       notesRef,
-      where("author", "==", user.uid),
+      where("author", "==", user?.uid ? user?.uid : ""),
       orderBy("createdAt", "desc")
     );
   // }

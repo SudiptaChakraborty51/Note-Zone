@@ -14,6 +14,8 @@ export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState({});
 
+  const [pathName, setPathName] = useState("");
+
   const logIn = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
@@ -21,6 +23,7 @@ const AuthProvider = ({ children }) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
   const logOut = () => {
+    localStorage.removeItem("user");
     return signOut(auth);
   };
   const googleSignIn = () => {
@@ -40,7 +43,17 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user, logIn, signUp, logOut, googleSignIn }}>
+    <AuthContext.Provider
+      value={{
+        user,
+        logIn,
+        signUp,
+        logOut,
+        googleSignIn,
+        pathName,
+        setPathName,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );

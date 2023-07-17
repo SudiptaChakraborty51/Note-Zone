@@ -6,7 +6,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 import { storage, db } from "../../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
-import {updateProfile} from "firebase/auth";
+import { updateProfile } from "firebase/auth";
 
 const Signup = () => {
   document.title = "Note Zone | Signup";
@@ -65,6 +65,18 @@ const Signup = () => {
                 }`,
                 photoURL: userDetails.file ? downloadURL : null,
               });
+
+              localStorage.setItem(
+                "user",
+                JSON.stringify({
+                  uid: res.user.uid,
+                  displayName: `${
+                    userDetails.firstName + " " + userDetails.lastName
+                  }`,
+                  email: userDetails.email,
+                  photoURL: userDetails.file ? downloadURL : null,
+                })
+              );
               //create user on firestore
               await setDoc(doc(db, "users", res.user.uid), {
                 uid: res.user.uid,
@@ -80,7 +92,7 @@ const Signup = () => {
             }
           });
         });
-        toast.success("Sign in Successful!")
+        toast.success("Sign in Successful!");
         navigate("/notes");
       } catch (err) {
         toast.error(err.message);
@@ -220,7 +232,9 @@ const Signup = () => {
           <div className="add-avatar-div">
             <label htmlFor="file" onClick={imageSelectHandler}>
               <i className="fa-solid fa-image-portrait"></i>
-              <span>{userDetails?.file ? userDetails.file.name : "Add an avatar"}</span>
+              <span>
+                {userDetails?.file ? userDetails.file.name : "Add an avatar"}
+              </span>
             </label>
           </div>
 

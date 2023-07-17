@@ -7,8 +7,14 @@ import Signup from "./pages/Signup/signup";
 import Landing from "./pages/Landing/landing";
 import RequireAuth from "./components/requireAuth";
 import Notes from "./pages/Notes/notes";
+import Archive from "./pages/Archive/archive";
+import Bin from "./pages/Bin/bin";
+import Labels from "./pages/Labels/labels";
+import { useContext } from "react";
+import { AuthContext } from "./contexts/AuthContext";
 
 function App() {
+  const { pathName } = useContext(AuthContext);
   return (
     <>
       <Routes>
@@ -17,6 +23,12 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route element={<RequireAuth />}>
           <Route path="/notes" element={<Notes />} />
+          <Route path="/archive" element={<Archive />} />
+          <Route path="/bin" element={<Bin />} />
+          <Route
+            path={`/${pathName}`}
+            element={<Labels pathName={pathName} />}
+          />
         </Route>
       </Routes>
       <ToastContainer

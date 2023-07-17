@@ -22,7 +22,7 @@ const LabelContainer = ({ label, deleteLabel, addNewLabel }) => {
           />
           <div className="modal-labels-container">
             {label?.map((label) => (
-              <div key={label} className="labels">
+              <div key={label} className="label">
                 <span>{label}</span>
                 <i
                   className="fa-solid fa-xmark"

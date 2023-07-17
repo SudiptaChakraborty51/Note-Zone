@@ -1,0 +1,22 @@
+.labels {
+  min-height: 100vh;
+}
+
+.labels-content {
+  display: flex;
+}
+
+.labels-main {
+  width: calc(100% - 16%);
+  padding: 10px 0;
+  left: 16%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.labels-main section {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1rem;
+}

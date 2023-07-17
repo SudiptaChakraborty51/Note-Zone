@@ -21,18 +21,19 @@ const Notes = () => {
         <Sidebar />
         <div className="notes-main">
           <section>
-            {pinnedNotes.length !== 0 && (
-              <div>
-                <h2>PINNED</h2>
-                <Layout>{pinnedNotes}</Layout> 
-              </div>
-            )}
-            {otherNotes.length !== 0 && (
-              <div>
-                <h2>OTHERS</h2>
-                <Layout>{otherNotes}</Layout> 
-              </div>
-            )}
+            <div>
+              <h2>PINNED</h2>
+              {pinnedNotes.length !== 0 ? (
+                <Layout>{pinnedNotes}</Layout>
+              ) : (
+                <p>No pinned notes are found!</p>
+              )}
+            </div>
+
+            <div>
+              <h2>OTHERS</h2>
+              {otherNotes.length !== 0 ? <Layout>{otherNotes}</Layout> : <p>No notes are found!</p>}
+            </div>
           </section>
           <button
             className="new-note-button"

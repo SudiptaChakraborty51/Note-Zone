@@ -18,31 +18,31 @@
 }
 
 .bg-white {
-  background-color: var(--white-color);
+  background-color: var(--white-color) !important;
 }
 
 .bg-orange {
-  background-color: var(--orange-color);
+  background-color: var(--orange-color) !important;
 }
 
 .bg-green {
-  background-color: var(--green-color);
+  background-color: var(--green-color) !important;
 }
 
 .bg-indigo {
-  background-color: var(--indigo-color);
+  background-color: var(--indigo-color) !important;
 }
 
 .bg-red {
-  background-color: var(--light-red-color);
+  background-color: var(--light-red-color) !important;
 }
 
 .bg-purple {
-  background-color: var(--purple-color);
+  background-color: var(--purple-color) !important;
 }
 
 .bg-yellow {
-  background-color: var(--yellow-color);
+  background-color: var(--yellow-color) !important;
 }
 
 .label-modal {
@@ -81,7 +81,7 @@
   gap: 0.5rem;
 }
 
-.label-modal .modal-labels-container .labels {
+.label-modal .modal-labels-container .label {
   display: flex;
   width: 11.7rem;
   justify-content: space-between;

@@ -1,12 +1,28 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./sidebar.css";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthContext";
+import useNotesData from "../../hooks/useNotesData";
 
 const Sidebar = () => {
   const getActiveStyle = ({ isActive }) => ({
     color: isActive && "var(--white-color)",
     backgroundColor: isActive && "var(--primary-color)",
   });
+
+  const { pathName, setPathName } = useContext(AuthContext);
+
+  const { labeledNotes } = useNotesData();
+
+  const getAllLabels = () => {
+    const labels = labeledNotes.map((n) => n.label);
+    const mergedLabels = [].concat(...labels);
+    const allLabels = [...new Set(mergedLabels)].sort((a, b) =>
+      a.localeCompare(b)
+    );
+    return allLabels;
+  };
+
   return (
     <div>
       <div className="sidebar">
@@ -19,9 +35,18 @@ const Sidebar = () => {
         <NavLink to="/bin" className="sidebar-items" style={getActiveStyle}>
           <i className="fa-solid fa-trash-can"></i> <span>Bin</span>
         </NavLink>
-        <NavLink to="/labels" className="sidebar-items" style={getActiveStyle}>
-          <i className="fa-solid fa-tag"></i> <span>Labels</span>
-        </NavLink>
+        {getAllLabels().map((label) => (
+          <NavLink
+            to={`/${label.replace(/\s/g, "-")}`}
+            onClick={() => {
+              setPathName(label.replace(/\s/g, "-"));
+            }}
+            className="sidebar-items"
+            style={getActiveStyle}
+          >
+            <i className="fa-solid fa-tag"></i> <span>{label}</span>
+          </NavLink>
+        ))}
       </div>
     </div>
   );

@@ -1,0 +1,22 @@
+.archive {
+  min-height: 100vh;
+}
+
+.archive-content {
+  display: flex;
+}
+
+.archive-main {
+  width: calc(100% - 16%);
+  padding: 10px 0;
+  left: 16%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.archive-main section {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1rem;
+}

@@ -1,0 +1,22 @@
+.bin {
+  min-height: 100vh;
+}
+
+.bin-content {
+  display: flex;
+}
+
+.bin-main {
+  width: calc(100% - 16%);
+  padding: 10px 0;
+  left: 16%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.bin-main section {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1rem;
+}
