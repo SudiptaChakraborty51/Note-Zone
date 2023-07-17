@@ -1,45 +1,107 @@
 .colors-palatte-container {
-    padding: 0.5rem;
-    background-color: var(--grey-color);
-    border-radius: 0.75rem;
-    display: flex;
-    gap: 0.5rem;
-    bottom: 2.5rem;
-    position: absolute;
-    border: 1px solid var(--light-grey-color);
+  padding: 0.5rem;
+  background-color: var(--grey-color);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+  bottom: 2.5rem;
+  position: absolute;
+  border: 1px solid var(--grey-color);
 }
 
 .colors-palatte-container .colors {
-    border-radius: 50%;
-    cursor: pointer;
-    width: 1.5rem;
-    height: 1.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .bg-white {
-    background-color: var(--white-color);
+  background-color: var(--white-color);
 }
 
 .bg-orange {
-    background-color: var(--orange-color);
+  background-color: var(--orange-color);
 }
 
 .bg-green {
-    background-color: var(--green-color);
+  background-color: var(--green-color);
 }
 
 .bg-indigo {
-    background-color: var(--indigo-color);
+  background-color: var(--indigo-color);
 }
 
 .bg-red {
-    background-color: var(--light-red-color);
+  background-color: var(--light-red-color);
 }
 
 .bg-purple {
-    background-color: var(--purple-color);
+  background-color: var(--purple-color);
 }
 
 .bg-yellow {
-    background-color: var(--yellow-color);
+  background-color: var(--yellow-color);
+}
+
+.label-modal {
+  padding: 0.5rem;
+  padding-bottom: 0;
+  background-color: var(--white-color);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  bottom: 2.5rem;
+  position: absolute;
+  border: 1px solid var(--grey-color);
+  display: flex;
+  width: 13rem;
+  flex-direction: column;
+  left: 7rem;
+  align-items: center;
+  gap: 0.75rem;
+  justify-content: space-between;
+}
+
+.label-modal input {
+  font-size: 13px;
+  padding: 2px;
+  width: 100%;
+  margin: 0;
+  border: none;
+  cursor: auto;
+}
+
+.label-modal input:focus {
+  outline: none;
+}
+
+.label-modal .modal-labels-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label-modal .modal-labels-container .labels {
+  display: flex;
+  width: 11.7rem;
+  justify-content: space-between;
+  gap: 0.25rem;
+  align-items: center;
+  border: 1px solid var(--lightgrey-color);
+  padding: 5px;
+  font-size: 12px;
+}
+
+.label-modal .modal-labels-container .labels .fa-xmark {
+  font-size: 12px;
+}
+
+.label-modal button {
+  font-size: 13px;
+  padding-bottom: 0.3rem;
+  padding-top: 0.25rem;
+  width: 100%;
+  border: none;
+  border-top: 1px solid var(--grey-color);
+  background-color: transparent;
 }

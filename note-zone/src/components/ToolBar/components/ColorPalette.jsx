@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import "./toolBarComponents.css";
-import { useOutsideClick } from "../../../hooks/useOutsideClick";
 
 const ColorPalette = ({ changeBg }) => {
   const [showColors, setShowColors] = useState(false);
-  const colorPaletteModalNode = useOutsideClick(() => setShowColors(false));
 
   return (
     <div>
@@ -15,7 +13,7 @@ const ColorPalette = ({ changeBg }) => {
       ></i>
       {showColors && (
         <>
-          <div className="colors-palatte-container" ref={colorPaletteModalNode}>
+          <div className="colors-palatte-container">
             <span
               className="colors bg-white"
               onClick={() => {
