@@ -14,6 +14,7 @@ import { useContext } from "react";
 import { AuthContext } from "./contexts/AuthContext";
 import ClipLoader from "react-spinners/ClipLoader";
 import Search from "./pages/Search/search";
+import Profile from "./pages/Profile/profile";
 
 function App() {
   const { pathName, query, loading } = useContext(AuthContext);
@@ -37,6 +38,7 @@ function App() {
               element={<Labels pathName={pathName} />}
             />
             <Route path="/search" element={<Search query={query} />} />
+            <Route path="/profile" element={<Profile />} />
           </Route>
         </Routes>
       )}

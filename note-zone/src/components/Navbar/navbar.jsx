@@ -55,7 +55,7 @@ const Navbar = () => {
             />
             {showProfile && (
               <div className="profile-logout-modal">
-                <div>Profile</div>
+                <div onClick={() => navigate("/profile")}>Profile</div>
                 <div
                   onClick={() => {
                     logOut();
