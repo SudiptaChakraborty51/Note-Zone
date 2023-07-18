@@ -1,123 +1,123 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import "./notePreview.css";
 import { doc, updateDoc, deleteDoc } from "firebase/firestore";
-import { notesRef } from '../../firebase';
-import {toast} from "react-toastify";
-import ToolBar from '../ToolBar/toolBar';
-import { getCurrentDateTime } from '../../utils/getCurrentDateTime';
-import { useOutsideClick } from '../../hooks/useOutsideClick';
+import { notesRef } from "../../firebase";
+import { toast } from "react-toastify";
+import ToolBar from "../ToolBar/toolBar";
+import { getCurrentDateTime } from "../../utils/getCurrentDateTime";
+import { useOutsideClick } from "../../hooks/useOutsideClick";
 
-const NotePreview = ({note, setIsOpen}) => {
-
+const NotePreview = ({ note, setIsOpen }) => {
   const notePreviewModalNode = useOutsideClick(() => setIsOpen(false));
+  const [notes, setNotes] = useState({
+    title: note.title,
+    content: note.content,
+    bg: note.bg,
+    label: note.label,
+    archived: note.archived,
+    deleted: note.deleted,
+    pinned: note.pinned,
+  });
 
-    console.log("HE he", note);
-    const [notes, setNotes] = useState({
-        title: note.title,
-        content: note.content,
-        bg: note.bg,
-        label: note.label,
-        archived: note.archived,
-        deleted: note.deleted,
-        pinned: note.pinned
-    });
+  const updateNote = async (id, value) => {
+    const note = doc(notesRef, id);
+    try {
+      await updateDoc(note, { ...value, editedAt: getCurrentDateTime() });
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
-    const updateNote = async (id, value) => {
-        const note = doc(notesRef, id);
-        try {
-          await updateDoc(note, { ...value, editedAt: getCurrentDateTime() });
-        } catch (err) {
-          console.error(err);
-        }
+  const deleteNote = async (id) => {
+    const note = doc(notesRef, id);
+    try {
+      await deleteDoc(note);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  // others
+  const changeBg = (bg) => {
+    setNotes((prevNote) => ({ ...prevNote, bg }));
+  };
+
+  const pinNote = () => {
+    updateNote(note.id, { pinned: !note.pinned });
+    setUpdatedNote();
+    setIsOpen(false);
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setNotes((prevNote) => ({ ...prevNote, [name]: value }));
+  };
+
+  const binNote = () => {
+    updateNote(note.id, { deleted: !note.deleted });
+    toast.success("Note Deleted!");
+    setUpdatedNote();
+    setIsOpen(false);
+  };
+
+  const archiveNote = () => {
+    updateNote(note.id, { archived: !note.archived });
+    toast.success("Note Archived!");
+    setUpdatedNote();
+    setIsOpen(false);
+  };
+
+  const unarchiveNote = () => {
+    updateNote(note.id, { archived: !note.archived });
+    toast.success("Note Unarchived");
+    setUpdatedNote();
+    setIsOpen(false);
+  };
+
+  const restoreNote = () => {
+    updateNote(note.id, { deleted: !note.deleted });
+    toast.success("Note Restored!");
+    setIsOpen(false);
+  };
+
+  const deleteNoteForever = () => {
+    deleteNote(note.id);
+    toast.success("Note deleted forever!");
+    setIsOpen(false);
+  };
+
+  const setUpdatedNote = () => {
+    for (let key in notes) {
+      if (notes[key].toString() !== note[key].toString()) {
+        updateNote(note.id, { [key]: notes[key] });
       }
-    
-      const deleteNote = async (id) => {
-        const note = doc(notesRef, id);
-        try {
-          await deleteDoc(note);
-        } catch (err) {
-          console.error(err);
-        }
-      }
-    
-      // others
-      const changeBg = (bg) => {
-        setNotes((prevNote) => ({ ...prevNote, bg }));
-      }
-    
-      const pinNote = () => {
-        updateNote(note.id, { pinned: !note.pinned });
-        setUpdatedNote();
-        setIsOpen(false);
-      }
-    
-      const handleChange = (e) => {
-        const { name, value } = e.target;
-        setNotes((prevNote) => ({ ...prevNote, [name]: value }));
-      }
-    
-      const binNote = () => {
-        updateNote(note.id, { deleted: !note.deleted });
-        toast.success("Note Deleted!");
-        setUpdatedNote();
-        setIsOpen(false);
-      }
-    
-      const archiveNote = () => {
-        updateNote(note.id, { archived: !note.archived });
-        toast.success("Note Archived!");
-        setUpdatedNote();
-        setIsOpen(false);
-      }
-    
-      const unarchiveNote = () => {
-        updateNote(note.id, { archived: !note.archived });
-        toast.success("Note Unarchived");
-        setUpdatedNote();
-        setIsOpen(false);
-      }
-    
-      const restoreNote = () => {
-        updateNote(note.id, { deleted: !note.deleted });
-        toast.success("Note Restored!");
-        setIsOpen(false);
-      }
-    
-      const deleteNoteForever = () => {
-        deleteNote(note.id);
-        toast.success("Note deleted forever!")
-        setIsOpen(false);
-      }
-    
-      const setUpdatedNote = () => {
-        for (let key in notes) {
-          if (notes[key].toString() !== note[key].toString()) {
-            updateNote(note.id, { [key]: notes[key] });
-          }
-        }
-      }
-    
-      const closeModal = () => {
-        setUpdatedNote();
-        setIsOpen(false);
-        toast.success("Note is updated!");
-      }
-    
-      const deleteLabel = (labelName) => {
-        setNotes((prevNote) => ({
-          ...prevNote,
-          label: prevNote.label.filter((l) => l !== labelName),
-        }));
-      }
-    
-      const addNewLabel = (labelName) => {
-        if (labelName.trim() !== "" && !note.label.includes(labelName.trim().toLowerCase())) {
-          setNotes((prevNote) => ({
-            ...prevNote,
-            label: [...prevNote.label, labelName.trim().toLowerCase()],
-          }));
-        }
-      }
+    }
+  };
+
+  const closeModal = () => {
+    setUpdatedNote();
+    setIsOpen(false);
+    toast.success("Note is updated!");
+  };
+
+  const deleteLabel = (labelName) => {
+    setNotes((prevNote) => ({
+      ...prevNote,
+      label: prevNote.label.filter((l) => l !== labelName),
+    }));
+  };
+
+  const addNewLabel = (labelName) => {
+    if (
+      labelName.trim() !== "" &&
+      !note.label.includes(labelName.trim().toLowerCase())
+    ) {
+      setNotes((prevNote) => ({
+        ...prevNote,
+        label: [...prevNote.label, labelName.trim().toLowerCase()],
+      }));
+    }
+  };
 
   return (
     <div className="new-note-modal-container">
@@ -156,7 +156,7 @@ const NotePreview = ({note, setIsOpen}) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default NotePreview
+export default NotePreview;

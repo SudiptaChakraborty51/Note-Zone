@@ -44,13 +44,11 @@ const Signup = () => {
 
   const handleSubmitSignup = async (e) => {
     e.preventDefault();
-    console.log(userDetails);
     if (userDetails.password !== userDetails.confirmPassword) {
       toast.error("Password & Confirm password should match!");
     } else {
       try {
         const res = await signUp(userDetails.email, userDetails.password);
-        console.log(res);
         const storageRef = ref(
           storage,
           `${userDetails.firstName + " " + userDetails.lastName}`
