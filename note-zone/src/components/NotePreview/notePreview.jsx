@@ -48,6 +48,7 @@ const NotePreview = ({note, setIsOpen}) => {
       const pinNote = () => {
         updateNote(note.id, { pinned: !note.pinned });
         setUpdatedNote();
+        setIsOpen(false);
       }
     
       const handleChange = (e) => {

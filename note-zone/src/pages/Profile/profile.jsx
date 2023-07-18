@@ -16,14 +16,24 @@ const Profile = () => {
         <Sidebar />
         <div className="profile-main">
           <div className="profile-container">
-            <img src={user?.photoURL} alt="profile-img" />
-            <h2>{user?.displayName}</h2>
-            <strong>{user?.email}</strong>
+            <div>
+              <img src={user?.photoURL} alt="profile-img" />
+              <h2>{user?.displayName}</h2>
+              <strong>{user?.email}</strong>
+            </div>
             <div className="profile-content">
-              <p><strong>Total Notes:</strong> {allNotes.length}</p>
-              <p><strong>Archived Notes:</strong> {archived.length}</p>
-              <p><strong>Pinned Notes:</strong> {pinned.length}</p>
-              <p><strong>Deleted Notes:</strong> {deleted.length}</p>
+              <p>
+                <strong>Total Notes:</strong> {allNotes.length}
+              </p>
+              <p>
+                <strong>Archived Notes:</strong> {archived.length}
+              </p>
+              <p>
+                <strong>Pinned Notes:</strong> {pinned.length}
+              </p>
+              <p>
+                <strong>Deleted Notes:</strong> {deleted.length}
+              </p>
             </div>
           </div>
         </div>

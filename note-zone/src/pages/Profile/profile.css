@@ -19,14 +19,15 @@
 
 .profile-main .profile-container {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 10px;
     padding: 20px;
     width: 50%;
     min-width: fit-content;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .profile-main .profile-container img {
@@ -45,6 +46,7 @@
 
 .profile-main .profile-container h2 {
     color: var(--primary-dark);
+    margin: 0;
 }
 
 @media (max-width: 600px) {
