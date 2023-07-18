@@ -1,0 +1,33 @@
+.search {
+  min-height: 100vh;
+}
+
+.search-content {
+  display: flex;
+}
+
+.search-main {
+  width: calc(100% - 16%);
+  padding: 10px 0;
+  left: 16%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-main section {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1rem;
+}
+
+.search-notes-initial {
+    position: absolute;
+    left: calc(50% - 16%);
+    top: 100px;
+}
+
+.search-notes-initial img {
+    width: 60%;
+    height: 60%;
+}

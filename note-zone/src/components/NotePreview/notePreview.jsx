@@ -47,7 +47,7 @@ const NotePreview = ({note, setIsOpen}) => {
     
       const pinNote = () => {
         updateNote(note.id, { pinned: !note.pinned });
-        closeModal();
+        setUpdatedNote();
       }
     
       const handleChange = (e) => {
@@ -57,30 +57,34 @@ const NotePreview = ({note, setIsOpen}) => {
     
       const binNote = () => {
         updateNote(note.id, { deleted: !note.deleted });
-        toast.success("Note Binned");
-        closeModal();
+        toast.success("Note Deleted!");
+        setUpdatedNote();
+        setIsOpen(false);
       }
     
-      function archiveNote() {
+      const archiveNote = () => {
         updateNote(note.id, { archived: !note.archived });
-        toast.success("Note Archived");
-        closeModal();
+        toast.success("Note Archived!");
+        setUpdatedNote();
+        setIsOpen(false);
       }
     
       const unarchiveNote = () => {
         updateNote(note.id, { archived: !note.archived });
         toast.success("Note Unarchived");
-        closeModal();
+        setUpdatedNote();
+        setIsOpen(false);
       }
     
       const restoreNote = () => {
         updateNote(note.id, { deleted: !note.deleted });
-        toast.success("Note Restored");
+        toast.success("Note Restored!");
         setIsOpen(false);
       }
     
       const deleteNoteForever = () => {
         deleteNote(note.id);
+        toast.success("Note deleted forever!")
         setIsOpen(false);
       }
     
@@ -95,6 +99,7 @@ const NotePreview = ({note, setIsOpen}) => {
       const closeModal = () => {
         setUpdatedNote();
         setIsOpen(false);
+        toast.success("Note is updated!");
       }
     
       const deleteLabel = (labelName) => {

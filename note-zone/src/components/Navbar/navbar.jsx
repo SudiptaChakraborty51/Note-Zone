@@ -3,6 +3,7 @@ import logo from "/notes.png";
 import "./navbar.css";
 import { AuthContext } from "../../contexts/AuthContext";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const { user, logOut, query, setQuery } = useContext(AuthContext);
@@ -12,6 +13,8 @@ const Navbar = () => {
   const userData = JSON.parse(localStorage.getItem("user"));
 
   console.log(userData);
+
+  const navigate = useNavigate();
 
   return (
     <div className="navbar">
@@ -26,6 +29,7 @@ const Navbar = () => {
               type="text"
               placeholder="Search notes"
               value={query}
+              onClick={() => navigate("/search")}
               onChange={(e) => setQuery(e.target.value)}
             />
             {query.trim() === "" ? (

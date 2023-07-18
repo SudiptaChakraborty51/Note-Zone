@@ -55,6 +55,7 @@ const NewNote = ({ setIsOpen }) => {
   const closeModal = () => {
     createNewNote();
     setIsOpen(false);
+    toast.success("New note is created!");
   };
 
   const changeBg = (color) => {

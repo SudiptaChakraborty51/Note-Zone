@@ -1,46 +1,50 @@
 .note-card-container {
-    margin-bottom: 1rem;
-    box-sizing: border-box;
-    letter-spacing: 0.025em;
-    font-weight: 400;
-    font-family: "Poppins", "sans - serif";
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+  letter-spacing: 0.025em;
+  font-weight: 400;
+  font-family: "Poppins", "sans - serif";
 }
 
 .note-card-container .note-card {
-    padding: 1rem;
-    border-radius: 0.5rem;
-    border: 1px solid #e5e7eb;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
-    width: 200px;
-    min-height: 120px;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  width: 200px;
+  min-height: 120px;
+}
+
+.note-card-container .note-card:hover {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .note-card h3 {
-    font-weight: bold;
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-    margin: 0;
+  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  margin: 0;
 }
 
 .note-card p {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .note-label-container {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .note-label-container span {
-    background-color: var(--grey-color);
-    border-radius: 5px;
-    padding: 5px;
-    font-size: 12px;
-    color: var(--white-color);
+  background-color: var(--grey-color);
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 12px;
+  color: var(--white-color);
 }

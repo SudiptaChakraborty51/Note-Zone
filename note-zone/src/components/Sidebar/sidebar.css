@@ -6,6 +6,7 @@
   gap: 1rem;
   border-right: 1px solid var(--black-color);
   position: fixed;
+  overflow-y: scroll;
 }
 
 .sidebar .sidebar-items {
@@ -39,6 +40,7 @@
     align-items: center;
     border: none;
     box-shadow: 0 -5px 8px -5px var(--grey-color);
+    overflow-y: hidden;
   }
 
   .sidebar .sidebar-items {
@@ -48,18 +50,27 @@
   .sidebar-items span {
     display: none;
   }
+
+  .sidebar-items + .label-sidebar {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 1024px) and (min-width: 601px) {
   .sidebar {
     width: 10%;
     align-items: center;
+    overflow-y: hidden;
   }
   .sidebar .sidebar-items {
     padding: 10px;
   }
 
   .sidebar-items span {
+    display: none;
+  }
+
+  .sidebar-items + .label-sidebar {
     display: none;
   }
 }

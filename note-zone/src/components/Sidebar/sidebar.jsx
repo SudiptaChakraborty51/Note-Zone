@@ -41,7 +41,7 @@ const Sidebar = () => {
             onClick={() => {
               setPathName(label.replace(/\s/g, "-"));
             }}
-            className="sidebar-items"
+            className="sidebar-items label-sidebar"
             style={getActiveStyle}
           >
             <i className="fa-solid fa-tag"></i> <span>{label}</span>
