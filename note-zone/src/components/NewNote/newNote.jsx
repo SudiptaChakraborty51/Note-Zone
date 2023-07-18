@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import "./NewNote.css";
+import "./newNote.css";
 import { useOutsideClick } from "../../hooks/useOutsideClick";
 import ToolBar from "../ToolBar/toolBar";
 import { AuthContext } from "../../contexts/AuthContext";
