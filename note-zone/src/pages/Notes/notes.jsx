@@ -6,9 +6,9 @@ import NewNote from "../../components/NewNote/newNote";
 import useNotesData from "../../hooks/useNotesData";
 import Note from "../../components/Note/note";
 import Layout from "../../components/Layout/layout";
-import useSearch from "../../hooks/useSearch";
 
 const Notes = () => {
+  document.title = "Note Zone | Notes";
   const [isOpen, setIsOpen] = useState(false);
   const { pinned, unpinned } = useNotesData();
 

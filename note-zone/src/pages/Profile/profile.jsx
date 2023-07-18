@@ -6,6 +6,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 import useNotesData from "../../hooks/useNotesData";
 
 const Profile = () => {
+  document.title = "Note Zone | Profile";
   const { user } = useContext(AuthContext);
   const { allNotes, deleted, archived, pinned } = useNotesData();
 

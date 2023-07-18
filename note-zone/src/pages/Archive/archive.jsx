@@ -7,6 +7,7 @@ import Note from "../../components/Note/note";
 import Layout from "../../components/Layout/layout";
 
 const Archive = () => {
+  document.title = "Note Zone | Archive";
   const { archived } = useNotesData();
 
   const archivedNotes = archived.map((note) => (

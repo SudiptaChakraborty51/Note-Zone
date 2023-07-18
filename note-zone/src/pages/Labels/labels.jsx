@@ -9,6 +9,7 @@ import Layout from "../../components/Layout/layout";
 
 const Labels = () => {
   const { pathName } = useContext(AuthContext);
+  document.title = `Note Zone | ${pathName}`;
 
   const { labeledNotes } = useNotesData();
 

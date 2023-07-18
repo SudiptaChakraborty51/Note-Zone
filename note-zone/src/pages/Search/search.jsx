@@ -8,6 +8,7 @@ import Layout from "../../components/Layout/layout";
 import search from "../../assets/search.svg";
 
 const Search = ({ query }) => {
+  document.title = "Note Zone | Search";
   const searchResults = useSearch(query);
 
   const searchedNotes = searchResults.map((note) => (

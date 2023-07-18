@@ -7,6 +7,7 @@ import Note from "../../components/Note/note";
 import Layout from "../../components/Layout/layout";
 
 const Bin = () => {
+  document.title = "Note Zone | Bin";
   const { deleted } = useNotesData();
 
   const deletedNotes = deleted?.map((note) => (
