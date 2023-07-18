@@ -17,7 +17,7 @@ const Profile = () => {
         <div className="profile-main">
           <div className="profile-container">
             <div>
-              <img src={user?.photoURL} alt="profile-img" />
+              <img src={user?.photoURL || `https://res.cloudinary.com/dqlasoiaw/image/upload/v1686688962/tech-social/blank-profile-picture-973460_1280_d1qnjd.png`} alt="profile-img" />
               <h2>{user?.displayName}</h2>
               <strong>{user?.email}</strong>
             </div>
