@@ -1,6 +1,5 @@
 # Note-Zone
 [Note-Zone](https://note-zone.netlify.app/) - Note-Zone is a user-friendly and efficient note-taking application. Users can easily create, edit, delete and archive notes using the intuitive interface.
-# tech-social
 
 ## How to install and run locally?
 
