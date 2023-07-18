@@ -43,3 +43,9 @@
 .notes-main .new-note-button i {
   font-size: 18px;
 }
+
+@media (max-width: 600px) {
+  .notes-main section {
+    margin: 0;
+  }
+}

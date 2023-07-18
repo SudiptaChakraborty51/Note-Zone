@@ -20,3 +20,9 @@
   flex-direction: column;
   margin: 0 1rem;
 }
+
+@media (max-width: 600px) {
+  .bin-main section {
+    margin: 0;
+  }
+}
