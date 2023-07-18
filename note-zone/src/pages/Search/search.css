@@ -22,12 +22,12 @@
 }
 
 .search-notes-initial {
-    position: absolute;
-    left: calc(50% - 16%);
-    top: 100px;
+  position: absolute;
+  left: calc(50% - 16%);
+  top: 100px;
 }
 
 .search-notes-initial img {
-    width: 60%;
-    height: 60%;
+  width: 60%;
+  height: 60%;
 }

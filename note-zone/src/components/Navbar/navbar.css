@@ -84,10 +84,10 @@
 }
 
 .navbar .middle-nav .search-bar {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
 }
 
 .navbar .middle-nav .search-bar input {

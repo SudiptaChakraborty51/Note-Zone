@@ -46,26 +46,26 @@ const ToolBar = ({
           <Pin pinNote={pinNote} pinned={newNote.pinned} />
         )}
         {newNote.archived && !newNote.deleted && (
-        <i
-          className="fa-solid fa-folder-open"
-          title="unarchive note"
-          onClick={() => unarchiveNote()}
-        ></i>
-      )}
-      {newNote.deleted && (
-        <i
-          className="fa-solid fa-trash"
-          title="delete forever"
-          onClick={() => deleteNoteForever()}
-        ></i>
-      )}
-      {newNote.deleted && (
-        <i
-          className="fa-solid fa-trash-arrow-up"
-          title="restore"
-          onClick={() => restoreNote()}
-        ></i>
-      )}
+          <i
+            className="fa-solid fa-folder-open"
+            title="unarchive note"
+            onClick={() => unarchiveNote()}
+          ></i>
+        )}
+        {newNote.deleted && (
+          <i
+            className="fa-solid fa-trash"
+            title="delete forever"
+            onClick={() => deleteNoteForever()}
+          ></i>
+        )}
+        {newNote.deleted && (
+          <i
+            className="fa-solid fa-trash-arrow-up"
+            title="restore"
+            onClick={() => restoreNote()}
+          ></i>
+        )}
       </div>
       <div className="toolbar-right-container">
         <i

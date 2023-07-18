@@ -1,46 +1,46 @@
 .new-note-modal-container {
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 50;
-    inset: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  
-  .new-note-modal {
-    background-color: var(--white-color);
-    margin: 0;
-    max-width: 24rem;
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    padding: 20px;
-    border: 1px solid var(--grey-color);
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .new-note-modal .new-note-container .title {
-      font-weight: 500;
-      font-size: 1.125rem;
-      background-color: initial;
-      border: none;
-      width: 100%;
-  }
-  
-  .new-note-modal .new-note-container .title:focus,
-  .new-note-modal .new-note-container .content:focus {
-      outline: none;
-  }
-  
-  .new-note-modal .new-note-container .content {
-      font-size: 1rem;
-      background-color: initial;
-      border: none;
-      width: 100%;
-      resize: none;
-      min-height: 8rem;
-      margin: 1rem 0;
-  }
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+  inset: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.new-note-modal {
+  background-color: var(--white-color);
+  margin: 0;
+  max-width: 24rem;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 20px;
+  border: 1px solid var(--grey-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.new-note-modal .new-note-container .title {
+  font-weight: 500;
+  font-size: 1.125rem;
+  background-color: initial;
+  border: none;
+  width: 100%;
+}
+
+.new-note-modal .new-note-container .title:focus,
+.new-note-modal .new-note-container .content:focus {
+  outline: none;
+}
+
+.new-note-modal .new-note-container .content {
+  font-size: 1rem;
+  background-color: initial;
+  border: none;
+  width: 100%;
+  resize: none;
+  min-height: 8rem;
+  margin: 1rem 0;
+}

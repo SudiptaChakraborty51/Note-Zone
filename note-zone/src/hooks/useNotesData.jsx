@@ -7,17 +7,16 @@ const useNotesData = () => {
   const { user } = useContext(AuthContext);
   const [notes, setNotes] = useState([]);
 
-    const q = query(
-      notesRef,
-      where("author", "==", user?.uid ? user?.uid : ""),
-      orderBy("createdAt", "desc")
-    );
-
+  const q = query(
+    notesRef,
+    where("author", "==", user?.uid ? user?.uid : ""),
+    orderBy("createdAt", "desc")
+  );
 
   useEffect(() => {
-      const unsubscribe = onSnapshot(q, (snapshot) => {
-        setNotes(snapshot.docs.map((doc) => ({ ...doc?.data(), id: doc.id })));
-      });
+    const unsubscribe = onSnapshot(q, (snapshot) => {
+      setNotes(snapshot.docs.map((doc) => ({ ...doc?.data(), id: doc.id })));
+    });
     return unsubscribe;
   }, []);
 

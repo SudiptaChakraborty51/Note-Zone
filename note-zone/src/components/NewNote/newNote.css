@@ -23,24 +23,24 @@
 }
 
 .new-note-modal .new-note-container .title {
-    font-weight: 500;
-    font-size: 1.125rem;
-    background-color: initial;
-    border: none;
-    width: 100%;
+  font-weight: 500;
+  font-size: 1.125rem;
+  background-color: initial;
+  border: none;
+  width: 100%;
 }
 
 .new-note-modal .new-note-container .title:focus,
 .new-note-modal .new-note-container .content:focus {
-    outline: none;
+  outline: none;
 }
 
 .new-note-modal .new-note-container .content {
-    font-size: 1rem;
-    background-color: initial;
-    border: none;
-    width: 100%;
-    resize: none;
-    min-height: 8rem;
-    margin: 1rem 0;
+  font-size: 1rem;
+  background-color: initial;
+  border: none;
+  width: 100%;
+  resize: none;
+  min-height: 8rem;
+  margin: 1rem 0;
 }

@@ -56,7 +56,7 @@ const AuthProvider = ({ children }) => {
         setPathName,
         query,
         setQuery,
-        loading
+        loading,
       }}
     >
       {children}

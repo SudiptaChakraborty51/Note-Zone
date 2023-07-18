@@ -4,7 +4,7 @@ import NotePreview from "../NotePreview/notePreview";
 
 const Note = ({ note }) => {
   const [isOpen, setIsOpen] = useState(false);
-  
+
   return (
     <div className="note-card-container">
       <div className={`note-card ${note?.bg}`} onClick={() => setIsOpen(true)}>

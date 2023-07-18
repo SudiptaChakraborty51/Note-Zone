@@ -14,7 +14,6 @@ const Signup = () => {
 
   const [isPasswordHide, setIsPasswordHide] = useState(true);
   const [isConfirmPasswordHide, setIsConfirmPasswordHide] = useState(true);
-  const [loading, setLoading] = useState(false);
 
   const [userDetails, setUserDetails] = useState({
     firstName: "",

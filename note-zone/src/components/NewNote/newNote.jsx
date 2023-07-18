@@ -92,7 +92,10 @@ const NewNote = ({ setIsOpen }) => {
   };
 
   const addNewLabel = (labelName) => {
-    if (labelName.trim() !== "" && !newNote.label.includes(labelName.trim().toLowerCase())) {
+    if (
+      labelName.trim() !== "" &&
+      !newNote.label.includes(labelName.trim().toLowerCase())
+    ) {
       setNewNote((prev) => ({
         ...prev,
         label: [...prev.label, labelName.trim().toLowerCase()],

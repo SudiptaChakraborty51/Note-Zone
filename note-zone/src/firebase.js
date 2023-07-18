@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import {getAuth} from "firebase/auth";
+import { getAuth } from "firebase/auth";
 import { getStorage } from "firebase/storage";
 import { getFirestore, collection } from "firebase/firestore";
 
@@ -10,7 +10,7 @@ const firebaseConfig = {
   storageBucket: "note-zone-3222f.appspot.com",
   messagingSenderId: "152188963426",
   appId: "1:152188963426:web:e6e43c7faa8bf85bf21f3b",
-  measurementId: "G-JEFJLQF7QH"
+  measurementId: "G-JEFJLQF7QH",
 };
 
 // Initialize Firebase
@@ -21,4 +21,4 @@ const db = getFirestore();
 
 const notesRef = collection(db, "notes");
 
-export {app, auth, storage, db, notesRef};
+export { app, auth, storage, db, notesRef };

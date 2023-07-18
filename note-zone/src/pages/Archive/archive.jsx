@@ -23,7 +23,7 @@ const Archive = () => {
               {archivedNotes.length !== 0 ? (
                 <Layout>{archivedNotes}</Layout>
               ) : (
-                <p >No notes in archived!</p>
+                <p>No notes in archived!</p>
               )}
             </Layout>
           </section>
