@@ -4,6 +4,7 @@ import "./navbar.css";
 import { AuthContext } from "../../contexts/AuthContext";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { useOutsideClick } from "../../hooks/useOutsideClick";
 
 const Navbar = () => {
   const { user, logOut, query, setQuery } = useContext(AuthContext);
@@ -15,6 +16,8 @@ const Navbar = () => {
   console.log(userData);
 
   const navigate = useNavigate();
+
+  const navbarNode = useOutsideClick(() => setShowProfile(false));
 
   return (
     <div className="navbar">
@@ -54,7 +57,7 @@ const Navbar = () => {
               }}
             />
             {showProfile && (
-              <div className="profile-logout-modal">
+              <div className="profile-logout-modal" ref={navbarNode}>
                 <div onClick={() => navigate("/profile")}>Profile</div>
                 <div
                   onClick={() => {
